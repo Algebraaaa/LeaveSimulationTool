@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xxx本科生请销假</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen pb-20">
+    <!-- Android Status Bar -->
+    <div class="bg-white px-4 py-1 flex items-center justify-between text-sm">
+        <div class="flex items-center gap-1">
+            <span class="font-medium">15:05</span>
+            <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+        </div>
+        <div class="flex items-center gap-1.5">
+            <!-- 闹钟图标 -->
+            <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <!-- 蓝牙图标 -->
+            <svg class="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.71 7.71L12 2h-1v7.59L6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 11 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 5.83l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z"/>
+            </svg>
+            <!-- 5G信号 -->
+            <span class="text-xs font-medium text-gray-700">5G</span>
+            <div class="flex items-end gap-0.5 h-3">
+                <div class="w-0.5 h-1 bg-gray-700 rounded-sm"></div>
+                <div class="w-0.5 h-1.5 bg-gray-700 rounded-sm"></div>
+                <div class="w-0.5 h-2 bg-gray-700 rounded-sm"></div>
+                <div class="w-0.5 h-3 bg-gray-700 rounded-sm"></div>
+            </div>
+            <!-- 4G信号 -->
+            <span class="text-xs font-medium text-gray-700">4G</span>
+            <div class="flex items-end gap-0.5 h-3">
+                <div class="w-0.5 h-1 bg-gray-700 rounded-sm"></div>
+                <div class="w-0.5 h-1.5 bg-gray-700 rounded-sm"></div>
+                <div class="w-0.5 h-2 bg-gray-400 rounded-sm"></div>
+                <div class="w-0.5 h-3 bg-gray-400 rounded-sm"></div>
+            </div>
+            <!-- 电池 -->
+            <div class="flex items-center">
+                <div class="w-6 h-3 border border-gray-700 rounded-sm relative">
+                    <div class="absolute left-0.5 top-0.5 bottom-0.5 w-4 bg-green-500 rounded-sm"></div>
+                </div>
+                <div class="w-0.5 h-1.5 bg-gray-700 rounded-r-sm"></div>
+            </div>
+            <span class="text-xs text-gray-700">83</span>
+        </div>
+    </div>
+    
+    <!-- App Navigation Bar -->
+    <div class="bg-white px-4 py-2 flex items-center justify-between border-b border-gray-100">
+        <div class="flex items-center gap-4">
+            <!-- 返回箭头 -->
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <!-- 关闭按钮 -->
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </div>
+        <span class="text-lg font-medium text-gray-800">详情</span>
+        <div class="flex items-center gap-4">
+            <!-- 复制图标 -->
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"></rect>
+                <path stroke-width="2" d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <!-- 分享图标 -->
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+            </svg>
+            <!-- 帮助文字 -->
+            <span class="text-gray-700">帮助</span>
+        </div>
+    </div>
+
+    <!-- Header Card -->
+    <div class="bg-white rounded-3xl mx-4 mt-4 p-5 shadow-sm">
+        <h1 class="text-2xl font-bold text-gray-800 mb-3">
+            xxx提交的本科生请销假
+        </h1>
+        
+        <!-- University Info -->
+        <div class="flex items-center gap-2 mb-2">
+            <img src="university.png" alt="华北水利水电大学" class="w-5 h-5 rounded-full">
+            <span class="text-gray-600">华北水利水电大学</span>
+        </div>
+        
+        <!-- Application Number -->
+        <div class="flex items-center gap-2 mb-2">
+            <span class="text-gray-500 text-sm">审批编号：</span>
+            <span class="text-gray-600 text-sm">202512241329000255323</span>
+            <button class="text-gray-400 ml-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Status -->
+        <div class="text-yellow-600 font-medium mb-4">等待我处理</div>
+        
+        <!-- Action Cards -->
+        <div class="grid grid-cols-2 gap-3">
+            <div class="bg-white border border-gray-200 rounded-2xl p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 transition">
+                <div class="flex items-center gap-3">
+                    <img src="kaoqin.png" alt="本月考勤" class="w-12 h-12 rounded-xl flex-shrink-0">
+                    <div>
+                        <div class="font-medium text-gray-800">本月考勤</div>
+                        <div class="text-gray-400 text-xs">--</div>
+                    </div>
+                </div>
+                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-2xl p-4 cursor-pointer hover:bg-gray-50 transition">
+                <div class="flex items-center gap-3">
+                    <img src="qingjia.png" alt="本月请假" class="w-12 h-12 rounded-xl flex-shrink-0">
+                    <div>
+                        <div class="font-medium text-gray-800 text-sm">本月请假1次</div>
+                        <div class="text-gray-400 text-xs">病假余额无限制</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Details Card -->
+    <div class="bg-white rounded-3xl mx-4 mt-3 p-5 shadow-sm">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">审批详情</h2>
+        
+        <!-- Leave Duration -->
+        <div class="bg-gray-100 rounded-2xl p-4 mb-4">
+            <div class="flex justify-between items-start mb-3">
+                <div class="text-lg font-medium text-gray-800">病假 6 小时</div>
+                <div class="text-sm text-blue-500 cursor-pointer">明细</div>
+            </div>
+            <div class="relative">
+                <!-- 纵向连接线 -->
+                <div class="absolute left-[3px] top-[16px] bottom-[16px] w-0.5 bg-gray-300"></div>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 text-gray-500">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full relative z-10"></div>
+                        <span class="text-sm">2025-12-24 13:28</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-500">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full relative z-10"></div>
+                        <span class="text-sm">2025-12-24 19:28</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form Fields -->
+        <div class="space-y-4">
+            <div>
+                <div class="text-sm text-gray-500 mb-1">校区</div>
+                <div class="text-base text-gray-800">龙子湖校区</div>
+            </div>
+            
+            <div>
+                <div class="text-sm text-gray-500 mb-1">学（书）院</div>
+                <div class="text-base text-gray-800">xxxx学院</div>
+            </div>
+            
+            <div>
+                <div class="text-sm text-gray-500 mb-1">手机号码</div>
+                <div class="text-base text-blue-500">+86-xxxxxxxxxxx</div>
+            </div>
+            
+            <div>
+                <div class="text-sm text-gray-500 mb-1">是否需要离校</div>
+                <div class="text-base text-gray-800">否，不需要离校</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0">
+        <!-- 渐变过渡层 -->
+        <div class="h-6 bg-gradient-to-t from-white to-transparent"></div>
+        <!-- 导航栏主体 -->
+        <div class="bg-white border-t border-gray-100 px-4 py-3 shadow-lg">
+        <div class="flex items-center justify-between max-w-2xl mx-auto">
+            <div class="flex items-center gap-10 ml-6">
+                <button class="flex flex-col items-center gap-1 hover:opacity-70 transition">
+                    <svg class="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                    </svg>
+                    <span class="text-sm text-gray-600">催办</span>
+                </button>
+                
+                <button class="flex flex-col items-center gap-1 hover:opacity-70 transition">
+                    <svg class="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    <span class="text-sm text-gray-600">评论</span>
+                </button>
+                
+                <button class="flex flex-col items-center gap-1 hover:opacity-70 transition">
+                    <svg class="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+                    </svg>
+                    <span class="text-sm text-gray-600">更多</span>
+                </button>
+            </div>
+            
+            <div class="flex items-center gap-5 mr-5">
+                <button class="px-7 py-2.5 bg-gray-100 text-gray-600 rounded-full font-medium hover:bg-gray-200 transition">
+                    暂存
+                </button>
+                
+                <button class="px-7 py-2.5 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition">
+                    提交
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
